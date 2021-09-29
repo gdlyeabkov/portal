@@ -43,24 +43,22 @@ mongoose.connect(url, connectionParams)
         console.error(`Error connecting to the database. \n${err}`);
     })
 
-const PostSchema = new mongoose.Schema({
-    content: String,
-    sender: String,
-    mailclient: String,
-    created: {
-        type: Date,
-        default: Date.now
-    },
-}, { collection : 'myposts' });
+const CitizenSchema = new mongoose.Schema({
+    name: String,
+    phone: String,
+    password: String
+}, { collection : 'mycitizens' });
 
-const PostModel = mongoose.model('PostModel', PostSchema);
+const CitizenModel = mongoose.model('CitizenModel', CitizenSchema);
 
-app.get('/post/',(req, res)=>{
+app.get('/citizens/get',(req, res)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
    
+    
+
     return res.json({ "status": "OK" })
 })
 
