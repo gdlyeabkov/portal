@@ -1,66 +1,68 @@
 <template>
   <div>
-    <div style="background-color: rgb(0, 0, 155); width: 100%; height: 50px;">
-      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-        <div style="align-self: center; ">
-          <div style="float: left; background-color: rgb(215, 215, 215);  background-image: url('https://svgsilh.com/svg/1297477-9e9e9e.svg'); width: 75px; height: 100%; background-size: 100% 100%;">
-            &nbsp;
-          </div>
-          <span style="float: left; color: rgb(200, 200, 200);" class="material-icons">
-            keyboard_arrow_down
-          </span>
-          <div class="hoverable" style="float: left; ">
-            Для граждан
-          </div>
-          <span style="float: left; color: rgb(200, 200, 200);" class="material-icons">
-            keyboard_arrow_down
-          </span>
-        </div>
-        <div>
-          <span class="material-icons" style="float: left; color: rgb(200, 200, 200);">
-            location_on
-          </span>
-          <div class="hoverable" style="float: left; ">
-            Электросталь г.
-          </div>
-          <img style="margin: 0px 15px; float: left;" width="25px" src="../assets/flag.png" alt="A">
-          <div class="hoverable" style="float: left; ">
-            RUS
-          </div>
-          <span style="float: left; color: rgb(200, 200, 200);" class="material-icons">
-            keyboard_arrow_down
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; height: 75px; background-color: rgb(255, );">
-      <div style="background-image: url('https://gu-st.ru/st/img/logo_nobeta.0a1f5dfe.svg'); height: 100%; width: 175px; background-size: 100% 100%;">
-      </div>
-      <div style="width: 250px; display: flex; flex-direction: row;  justify-content: space-between;">
-        <p>Услуги</p>
-        <p>Оплата</p>
-        <p>Поддержка</p>
-        <span class="material-icons">
-          search
-        </span>
-      </div>
-      <p>Личный кабинет</p>
-    </div>
-    
-    <div style="display: flex; justify-content: center; align-items: center; background-color: rgb(175, 255, 255); height: 75px; width: 100%;">
-      <div style="display: flex; align-items: center; background-color: rgb(255, 255, 255); height: 75px; width: 25%;">
-        <p style="color: rgb(255, 150, 0);" class="material-icons-outlined">
+    <Header />
+    <div style="display: flex; justify-content: center; align-items: center; background-color: rgb(255, 245, 235); height: 45px; width: 100%;">
+      <div style="display: flex; align-items: center; height: 100%; width: 25%;">
+        <p style="align-self: center; color: rgb(255, 150, 0);" class="material-icons-outlined">
           info
         </p>
-        <p style="margin-left: 15px;">Попробуйте бета-версию новых Госуслуг</p>
+        <p style="align-self: center; margin-left: 15px;">Попробуйте бета-версию новых Госуслуг</p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-around; align-items: center; width: 100%; height: 300px; background-color: rgb(235, 235, 235);">
+      <div style="width: 315px; height: 225px; background-color: rgb(255, 255, 255);">
+        <p style="font-size: 24px;">
+          Подведение газа к участку
+        </p>
+        <div style="display: flex; flex-direction: row;">
+          <p>
+            Онлайн-заявка на
+            бесплатное
+            подключение к сети
+            газораспределения
+          </p>
+          <img src="https://gu-st.ru/htdocs/img/new-payments/gaz.svg" alt="">
+        </div>
+      </div>
+      <div style="width: 315px; height: 225px; background-color: rgb(255, 255, 255);">
+        <p style="font-size: 24px;">
+          Выплаты беременным
+        </p>
+        <div style="display: flex; flex-direction: row;">
+          <p>
+            В трудном финансовом
+            положении и при
+            постановке на учёт
+            до 12 недель
+          </p>
+          <img src="https://gu-st.ru/htdocs/img/new-payments/pregnancy.svg" alt="">
+        </div>
+      </div>
+      <div style="width: 315px; height: 225px; background-color: rgb(255, 255, 255);">
+        <p style="font-size: 24px;">
+          Выплаты родителям
+        </p>
+        <div style="display: flex; flex-direction: row;">
+          <p>
+            На детей от 8 до 17 лет
+            при доходе семьи ниже
+            прожиточного
+            минимума
+          </p>
+          <img src="https://gu-st.ru/htdocs/img/new-payments/single-parent.svg" alt="">
+        </div>
       </div>
     </div>
     
+    <div style="background-color: rgb(200, 255, 255);">
+      <img src="https://gu-st.ru/content/Banner/coronavirus_landing_desk.svg" alt="">
+    </div>
+
     <div style="width: 100%; height: 475px; background-color: rgb(100, 0, 245);">
       <div style="width: 85%; margin: auto; display: flex; justify-content: space-around;">
         <div style="width: 65%;">
-          <input type="text" class="form-control">
+          <input type="text" placeholder="Введите название услуги или ведомства" style="margin: 15px 0px;" class="form-control">
           <p style="color: rgb(255, 255, 255); font-size: 18px; font-weight: bolder;">
             Рекомендуем для жителей Московской области
           </p>
@@ -93,45 +95,102 @@
           </div>
           <hr />
           <div style="width: 100%; display: flex; justify-content: space-around; align-items: center">
-            <img src="https://gu-st.ru/content/Banner/ic_gasification_main.svg" alt="">
-            <div style="color: rgb(255, 255, 255);">
-              <p>
-                Подайте заявку на подключение к газу
-              </p>
-              <p>
-                Если участок находится в газифицированном населённом пункте
-              </p>
+            <div v-if="serviceCursor === 0">
+              <img src="https://gu-st.ru/content/Banner/ic_gasification_main.svg" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Подайте заявку на подключение к газу
+                </p>
+                <p>
+                  Если участок находится в газифицированном населённом пункте
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 1">
+              <img src="https://gu-st.ru/content/Banner/10vaccination.svg" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  100 тысяч рублей за прививку от COVID-19
+                </p>
+                <p>
+                  Найдите себя в списке выигравших
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 2">
+              <img src="https://gu-st.ru/content/Banner/complaints.svg" style="width: 45px; height: 45px;" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Сообщите о проблеме с вакцинацией или лечением от коронавируса
+                </p>
+                <p>
+                  Не смогли записаться на вакцинацию, получить сертификат или QR-код? Есть проблемы с получением медицинской помощи? Сообщите об этом
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 3">
+              <img src="https://gu-st.ru/content/Banner/mp_auto_icon.svg" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Новое приложение «Госуслуги Авто»
+                </p>
+                <p>
+                  Электронные документы и сервисы для автовладельцев
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 4">
+              <img  src="https://gu-st.ru/content/Banner/complaints.svg" style="width: 45px; height: 45px;" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Сообщить о проблеме
+                </p>
+                <p>
+                  Столкнулись с проблемой — напишите о ней. Сообщение попадёт сразу в нужное ведомство, а вы сможете оценить результат
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 5">
+              <img src="https://gu-st.ru/content/main_banner/mir_main_old.svg" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Штрафы без комиссии по карте «Мир»
+                </p>
+                <p>
+                  Не платите лишнего
+                </p>
+              </div>
+            </div>
+            <div v-else-if="serviceCursor === 6">
+              <img src="https://gu-st.ru/content/main_banner/banner_job.svg" alt="">
+              <div style="color: rgb(255, 255, 255);">
+                <p>
+                  Работа в Минцифры
+                </p>
+                <p>
+                  Начни карьеру в правильном министерстве!
+                </p>
+              </div>
             </div>
             <span style="align-self: flex-start; color: rgb(255, 255, 255);" class="material-icons-outlined">
               close
             </span>
           </div>
           <div style="display: flex; align-items: center">
-            <span  style="color: rgb(255, 255, 255);" class="material-icons-outlined">
+            <span @click="seekServiceCursor(false)" style="cursor: pointer; color: rgb(255, 255, 255);" class="material-icons-outlined">
               chevron_left
             </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
-              circle
-            </span>
-            <span style="color: rgb(255, 255, 255);" class="material-icons-outlined">
+            <div v-for="circleIdx in serviceCursor + 1">
+              <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons">
+                circle
+              </span>
+            </div>
+            <div v-for="circleOutlineIdx in (6 - serviceCursor)">
+              <span style="margin: 0px 5px; color: rgb(255, 255, 255); font-size: 12px;" class="material-icons-outlined">
+                circle
+              </span>
+            </div>
+            <span @click="seekServiceCursor(true)" style="cursor: pointer; color: rgb(255, 255, 255);" class="material-icons-outlined">
               chevron_right
             </span>
           </div>
@@ -571,132 +630,38 @@
           </span>
         </div>
       </div>
-      
-      <div style="padding: 15px 0px; background-color: rgb(200, 200, 200); width: 100%; ">
-        <p style="font-size: 28px; font-weight: bolder;">
-          Частые вопросы
-        </p>
-        <div style="margin-top: 50px; display: flex; justify-content: space-around;">
-          <div style="display: flex; flex-direction: column; width: 25%;">
-            <p style="font-weight: bolder; font-size: 18px;">
-              Помощь и поддержка
-            </p>
-            <p style="cursor: pointer;">
-              Вход и регистрация
-            </p>
-            <p style="cursor: pointer;">
-              Вопросы по оплате
-            </p>
-            <p style="cursor: pointer;">
-              Вопросы по личному кабинету
-            </p>
-            <p style="cursor: pointer;">
-              Автовладельцам
-            </p>
-            <p style="cursor: pointer;">
-              Центры обслуживания
-            </p>
-            <p style="cursor: pointer;">
-              Все вопросы и ответы
-            </p>
-          </div>
-          <div style="display: flex; flex-direction: column; width: 25%;">
-            <p style="font-weight: bolder; font-size: 18px;">
-              Информация о портале
-            </p>
-            <p style="cursor: pointer;">
-              Новости
-            </p>
-            <p style="cursor: pointer;">
-              Информация о платежах
-            </p>
-            <p style="cursor: pointer;">
-              Правовая информация
-            </p>
-            <p style="cursor: pointer;">
-              О портале
-            </p>
-            <p style="font-weight: bolder; font-size: 18px;">
-              Мобильные приложения
-            </p>
-            <p style="cursor: pointer;">
-              Для граждан
-            </p>
-            <p style="cursor: pointer;">
-              Для бизнеса
-            </p>
-          </div>
-          <div style="display: flex; flex-direction: column; width: 25%;">
-            <p style="font-weight: bolder; font-size: 18px;">
-              Полезные ресурсы
-            </p>
-            <p style="cursor: pointer;">
-              Российская общественная инициатива
-            </p>
-            <p style="cursor: pointer;">
-              Интернет-портал правовой информации
-            </p>
-            <p style="font-weight: bolder; font-size: 18px;">
-              Партнёрам
-            </p>
-            <p style="cursor: pointer;">
-              Государственным органам
-            </p>
-            <p style="cursor: pointer;">
-              Коммерческим организациям
-            </p>
-            <p style="cursor: pointer;">
-              Документы
-            </p>
-          </div>
-          <div style="display: flex; flex-direction: column; width: 25%;">  
-            <p style="font-weight: bolder; font-size: 18px;">
-              Наши проекты
-            </p>
-            <p style="cursor: pointer;">
-              Досудебное обжалование
-            </p>
-            <p style="cursor: pointer;">
-              Контроль инвестиционных программ
-            </p>
-            <p style="cursor: pointer;">
-              Беженцам с Юго-Востока Украины
-            </p>
-            <p style="cursor: pointer;">
-              Народный рейтинг электронных госуслуг
-            </p>
-            <p style="cursor: pointer;">
-              Единая система идентификации и аутентификации
-            </p>
-          </div>
-        </div>
-        <hr />
-        <div style="display: flex; justify-content: center;">
-          <button class="btn btn-primary">
-            Все частые вопросы
-          </button>
-        </div>
-      </div>
-
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue"
+import Footer from "@/components/Footer.vue"
+
 export default {
   name: 'Home',
   data(){
     return {
-      servicesTypeToggler: false
+      servicesTypeToggler: false,
+      serviceCursor: 0
     }
   },
   methods: {
+    seekServiceCursor(direction){
+      if(!direction && this.serviceCursor >= 1){
+        this.serviceCursor--
+      } else if(direction && this.serviceCursor <= 5) {
+        this.serviceCursor++
+      }
+    },
     toggleServiceType(serviceTypeValue){
       this.servicesTypeToggler = serviceTypeValue
     }
   },
   components: {
-    
+    Header,
+    Footer
   }
 }
 </script>
@@ -706,5 +671,6 @@ export default {
   }
   .hoverable:hover {
     color: rgb(255, 255, 255);
+    background-color: "rgb(255, 215, 255)";
   }
 </style>
