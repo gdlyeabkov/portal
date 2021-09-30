@@ -51,25 +51,25 @@
         <div v-if="servicesMenu" style="margin: auto; position: absolute; top: 125px; left: 0px; width: 100%; height: 445px; background-color: rgb(245, 245, 245);">
             <div>
                 <div style="display: flex; width: 75%; margin: auto; justify-content: center; align-items: center; height: 100%;">
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Family' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/3.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Семья и дети
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Passports' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/7.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Паспорта, регистрации, визы
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Transport' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/11.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Транспорт и вождение
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Education' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/56.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Образование
@@ -77,25 +77,25 @@
                     </div>
                 </div>
                 <div style="display: flex; width: 75%; margin: auto; justify-content: center; align-items: center; height: 100%;">
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Tax' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/16.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Налоги и финансы
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Health' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/22.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Моё здоровье
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Penseions' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/26.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Пенсия, пособия, льготы
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Licenses' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/29.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Лицензии, справки, аккредитации
@@ -103,25 +103,25 @@
                     </div>
                 </div>
                 <div style="display: flex; width: 75%; margin: auto; justify-content: center; align-items: center; height: 100%;">
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Security' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/45.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Безопасность и правопорядок
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Work' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/38.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Работа и занятость
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Culture' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/41.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Культура, досуг, спорт
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Bussiness' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/34.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Бизнес и предпринимательство, НКО
@@ -129,19 +129,19 @@
                     </div>
                 </div>
                 <div style="display: flex; width: 75%; margin: auto; justify-content: center; align-items: center; height: 100%;">
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Production' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/46.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Производство и реклама
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Information' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/49.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Информация, связь и реклама
                         </p>
                     </div>
-                    <div @click="$router.push({ name: '' })" style="margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Ecology' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/55.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Природопользование и экология
