@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import PersonalArea from '../views/PersonalArea.vue'
+import Statements from '../views/Statements.vue'
+import DocumentsAndData from '../views/DocumentsAndData.vue'
+import GovermentMail from '../views/GovermentMail.vue'
+import Overview from '../views/Overview.vue'
 import PersonalAreaRegister from '../views/PersonalAreaRegister.vue'
+import PersonalAreaAdminRegister from '../views/PersonalAreaAdminRegister.vue'
 import PersonalAreaLogin from '../views/PersonalAreaLogin.vue'
 import Help from '../views/Help.vue'
 import Pay from '../views/Pay.vue'
@@ -32,14 +36,34 @@ const routes = [
     component: Home
   },
   {
-    path: '/area',
-    name: 'PersonalArea',
-    component: PersonalArea
+    path: '/statements',
+    name: 'Statements',
+    component: Statements
+  },
+  {
+    path: '/overview',
+    name: 'Overview',
+    component: Overview
+  },
+  {
+    path: '/documents',
+    name: 'DocumentsAndData',
+    component: DocumentsAndData
+  },
+  {
+    path: '/mail',
+    name: 'GovermentMail',
+    component: GovermentMail
   },
   {
     path: '/register',
     name: 'PersonalAreaRegister',
     component: PersonalAreaRegister
+  },
+  {
+    path: '/admin/register',
+    name: 'PersonalAreaAdminRegister',
+    component: PersonalAreaAdminRegister
   },
   {
     path: '/login',

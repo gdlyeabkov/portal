@@ -639,12 +639,17 @@
 import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
 
+import * as jwt from 'jsonwebtoken'
+
 export default {
   name: 'Home',
   data(){
     return {
       servicesTypeToggler: false,
-      serviceCursor: 0
+      serviceCursor: 0,
+      currentCitizen: '',
+      citizenIsLogin: false,
+      token: '',
     }
   },
   methods: {

@@ -45,7 +45,59 @@
                 search
                 </span>
             </div>
-            <p style="color: rgb(0, 0, 255);" @click="$router.push({ name: 'PersonalArea' })">Личный кабинет</p>
+            <p v-if="!citizenIsLogin" style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'PersonalAreaLogin' })">
+                Личный кабинет
+            </p>
+            <div v-else style="display: flex; justify-content: space-between; width: 200px;">
+                <div style="background-image: url('https://icon-library.com/images/user-icon/user-icon-17.jpg'); background-size: 100% 100%; background-color: transparent; height: 35px; width: 35px; border-radius: 100%;">
+                </div>
+                <p>
+                    {{ currentCitizen }}
+                </p>
+                <span class="material-icons" style="cursor: pointer;" @click="drawCitizenMenu(true)">
+                    expand_more
+                </span>
+                <div v-if="citizenMenu" style="box-sizing: border-box; padding: 25px; border: 1px solid rgb(225, 225, 225); width: 325px; height: 475px; position: absolute; top: 50px; left: 900px; background-color: rgb(255, 255, 255);">
+                    <div style="display: flex; justify-content: space-between; width: 200px;">
+                        <div style="background-image: url('https://icon-library.com/images/user-icon/user-icon-17.jpg'); background-size: 100% 100%; background-color: transparent; height: 35px; width: 35px; border-radius: 100%;">
+                        </div>
+                        <p>
+                            {{ currentCitizen }}
+                        </p>
+                        <span class="material-icons" style="cursor: pointer;" @click="drawCitizenMenu(false)">
+                            close
+                        </span>
+                    </div>
+                    <hr />
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'Overview' })">
+                        Обзор
+                    </p>
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'Statements' })">
+                        Заявления
+                    </p>
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'DocumentsAndData' })">
+                        Документы и данные
+                    </p>
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'GovermentMail' })">
+                        Госпочта
+                    </p>
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="logout()">
+                        Согласия
+                    </p>
+                    <hr />
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="logout()">
+                        Настройки и безопасность
+                    </p>
+                    <hr />
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="logout()">
+                        Войти как организация
+                    </p>
+                    <hr />
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="logout()">
+                        Выйти
+                    </p>
+                </div>
+            </div>
         </div>
         
         <div v-if="servicesMenu" style="margin: auto; position: absolute; top: 125px; left: 0px; width: 100%; height: 445px; background-color: rgb(245, 245, 245);">
@@ -163,17 +215,37 @@
 </template>
 
 <script>
+import * as jwt from 'jsonwebtoken'
+
 export default {
     name: "Header",
     data(){
         return {
-            servicesMenu: false
+            servicesMenu: false,
+            currentCitizen: '',
+            citizenIsLogin: false,
+            token: window.localStorage.getItem("portaltoken"),
+            citizenMenu: false,
         }
+    },
+    mounted(){
+        jwt.verify(this.token, 'portalsecret', (err, decoded) => {
+        if (err) {
+            this.currentCitizen = ''
+            this.citizenIsLogin = false
+        } else {
+            this.currentCitizen = decoded.phone
+            this.citizenIsLogin = true
+        }
+        })
     },
     methods: {
         drawServicesMenu(toggle){
             console.log("рисую сервисное меню")
             this.servicesMenu = toggle
+        },
+        drawCitizenMenu(toggle){
+            this.citizenMenu = toggle
         }
     }
 }

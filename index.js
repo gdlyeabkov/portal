@@ -63,7 +63,7 @@ app.get('/citizens/get',(req, res)=>{
     return res.json({ "status": "OK" })
 })
 
-app.post('/citizens/create', async (req, res)=>{
+app.get('/citizens/create', async (req, res)=>{
     
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -113,7 +113,7 @@ app.get('/citizens/check', (req,res)=>{
             return res.json({ "status": "Error" })
         }
         if(allCitizens.length >= 1){
-            let query =  CitizenModel.findOne({'email': req.query.phone}, function(err, citizen){
+            let query =  CitizenModel.findOne({'phone': req.query.phone}, function(err, citizen){
                 if (err){
                     return res.json({ "status": "Error" })
                 } else {
@@ -137,7 +137,7 @@ app.get('**', (req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     
-    return res.redirect(`https://showbellow.herokuapp.com/?redirectroute=${req.path}`)
+    return res.redirect(`http://localhost:4000/?redirectroute=${req.path}`)
 })
 
 // const port = process.env.PORT || 8080
