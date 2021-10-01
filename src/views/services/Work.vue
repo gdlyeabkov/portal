@@ -1,10 +1,11 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'0, 185, 0'" :title="'Работа и занятость'" />
         <div style="margin: auto; width: 85%;">
             <div style="width: 100%;">
                 <p style="font-size: 36px;">
-                    Помощь и поддержка
+                    Работа и занятость
                 </p>
                 <button class="btn btn-light" style="border: 1px solid rgb(225, 225, 225);">
                     Вернуться в каталог
@@ -384,6 +385,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -408,6 +410,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }

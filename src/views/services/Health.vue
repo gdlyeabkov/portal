@@ -1,6 +1,7 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'0, 200, 200'" :title="'Моё здоровье'" />
         <div>
 
         </div>
@@ -738,6 +739,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -766,6 +768,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }

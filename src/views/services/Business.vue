@@ -1,6 +1,7 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'175, 175, 175'" :title="'Бизнес, предпринимательство, НКО'" />
         <div>
 
         </div>
@@ -312,6 +313,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -338,6 +340,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }

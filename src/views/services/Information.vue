@@ -1,6 +1,7 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'125, 125, 125'" :title="'Информация, связь и реклама'" />
         <div>
 
         </div>
@@ -11,7 +12,7 @@
                         <div>
                             <div>
                                 <p style="font-size: 36px;">
-                                    Безопасность и правопорядок
+                                    Информация, связь и реклама
                                 </p>
                                 <button class="btn btn-light" style="border: 1px solid rgb(225, 225, 225);">
                                     Вернуться в каталог
@@ -264,6 +265,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -289,6 +291,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }

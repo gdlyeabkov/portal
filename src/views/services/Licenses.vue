@@ -1,6 +1,7 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'200, 0, 0'" :title="'Лицензии, справки, аккредитации'" />   
         <div>
 
         </div>
@@ -995,6 +996,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -1026,6 +1028,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }

@@ -132,7 +132,7 @@
                     <div @click="$router.push({ name: 'Production' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/46.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
-                            Производство и реклама
+                            Производство и торговля
                         </p>
                     </div>
                     <div @click="$router.push({ name: 'Information' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">

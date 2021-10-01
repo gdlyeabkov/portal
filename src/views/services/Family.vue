@@ -1,21 +1,11 @@
 <template>
   <div>
         <Header />
+        <Breadcrumbs :color="'0, 200, 255'" :title="'Семья и дети'" />
         <div>
 
         </div>
         <div style="margin: auto; width: 85%;">
-            <div style="width: 100%;">
-                <p style="font-size: 36px;">
-                Помощь и поддержка
-                </p>
-            </div>
-            <div style="margin-top: 25px; background-color: rgb(100, 100, 255); width: 100%; height: 75px; display: flex; justify-content: space-around; align-items: center;">
-                <p style="font-weight: bolder; font-size: 24px;">
-                Что вы ищите?
-                </p>
-                <input type="text" placeholder="Поиск в частых вопросах" class="form-control w-50">
-            </div>
             <div>
                 <div style="display: flex; justify-content: center;float: left; width: 75%;">
                     <div style="">
@@ -487,6 +477,7 @@
 
 <script>
 import Header from "@/components/Header.vue"
+import Breadcrumbs from "@/components/Breadcrumbs.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
@@ -511,6 +502,7 @@ export default {
     },
     components: {
         Header,
+        Breadcrumbs,
         Footer
     }
 }
