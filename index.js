@@ -23,7 +23,7 @@ const app = express()
 
 app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
-const url = `mongodb+srv://glebClusterUser:glebClusterUserPassword@cluster0.fvfru.mongodb.net/posts?retryWrites=true&w=majority`;
+const url = `mongodb+srv://glebClusterUser:glebClusterUserPassword@cluster0.fvfru.mongodb.net/citizens?retryWrites=true&w=majority`;
 
 var options = {
     root: path.join(__dirname, 'views'),
@@ -45,6 +45,7 @@ mongoose.connect(url, connectionParams)
 
 const CitizenSchema = new mongoose.Schema({
     name: String,
+    age: Number,
     phone: String,
     password: String
 }, { collection : 'mycitizens' });
@@ -62,7 +63,73 @@ app.get('/citizens/get',(req, res)=>{
     return res.json({ "status": "OK" })
 })
 
+app.post('/citizens/create', async (req, res)=>{
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
 
+    let query = CitizenModel.find({})
+    query.exec((err, allCitizens) => {
+        if (err){
+            return res.json({ "status": "Error" })
+        }
+        
+        var citizenExists = false;
+
+        allCitizens.forEach(citizen => {
+            if(citizen.phone.includes(req.query.phone)){
+                citizenExists = true
+            }
+        });
+        if(citizenExists){
+            return res.json({ "status": "Error" })
+
+        } else {
+            let encodedPassword = "#"
+            const salt = bcrypt.genSalt(saltRounds)
+            encodedPassword = bcrypt.hashSync(req.query.password, saltRounds)
+            const citizen = new CitizenModel({ phone: req.query.phone, password: encodedPassword, name: req.query.name, age: Number(req.query.age) });
+            citizen.save(function (err) {
+                if(err){
+                    return res.json({ "status": "Error" })
+                }
+                return res.json({ "status": "OK" })
+            })
+        }
+    });
+})
+
+app.get('/citizens/check', (req,res)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    let queryBefore = CitizenModel.find({ phone: { $in: req.query.phone }  })
+    queryBefore.exec((err, allCitizens) => {
+        if(err){
+            return res.json({ "status": "Error" })
+        }
+        if(allCitizens.length >= 1){
+            let query =  CitizenModel.findOne({'email': req.query.phone}, function(err, citizen){
+                if (err){
+                    return res.json({ "status": "Error" })
+                } else {
+                    const passwordCheck = bcrypt.compareSync(req.query.password, citizen.password) && req.query.password !== ''
+                    if(citizen != null && citizen != undefined && passwordCheck){
+                        return res.json({ "status": "OK", "sender": citizen.phone })
+                    } else {
+                        return res.json({ "status": "Error" })
+                    }
+                }
+            })    
+        } else if(allCitizens.length <= 0){
+            return res.json({ "status": "Error" })
+        }
+    })
+})
 
 app.get('**', (req, res) => { 
     res.setHeader('Access-Control-Allow-Origin', '*');

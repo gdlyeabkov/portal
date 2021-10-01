@@ -12,37 +12,23 @@
                 <div style="margin: auto; width: 75%; display: flex; flex-direction: column; align-items: center;">
                     <div style="text-align: center; line-height: 5px; margin-bottom: 35px;">
                         <p style="font-size: 24px; font-weight: bolder;">
-                            Вход
-                        </p>
-                        <p>
-                            для портала Госуслуг
+                            Регистрация
                         </p>
                     </div>
-                    <div v-if="false" style="display: flex; width: 100%; justify-content: space-around;">
-                        <div style="border-radius: 100%; width: 65px; height: 65px; background-color: rgb(225, 225, 225); background-image: url('https://icon-library.com/images/user-icon/user-icon-17.jpg'); background-size: cover;">
-
-                        </div>
-                        <div>
-                            <p>
-                                +7 (926) 863-70-91
-                            </p>
-                            <p @click="$router.push({ name: 'PersonalArea' })" style="color: rgb(0, 0, 255);">
-                                Другой пользователь
-                            </p>
-                        </div>
-                    </div>
-                    <input v-model="phone" v-else type="phone" style="margin-bottom: 15px;" class="form-control" placeholder="Телефон, почта или СНИЛС" />
-                    <input v-model="password" type="password" class="form-control" placeholder="Пароль" />
-                    <button @click="login()" style="margin-top: 25px; display: block;" class="w-100 btn btn-primary">Войти</button>
+                    <p style="text-align: center;">
+                        Зарегистрируйтесь онлайн через банк или посетив центры обслуживания
+                    </p>
+                    <button @click="login()" style="margin-top: 25px; display: block;" class="w-100 btn btn-primary">Онлайн через банк</button>
+                    <button @click="login()" style="margin-top: 25px; display: block; color: rgb(0, 0, 255); border: 1px solid rgb(0, 0, 255);" class="w-100 btn btn-light">Через центр обслуживания</button>
                     <p style="margin-top: 25px; cursor: pointer; color: rgb(0, 0, 255);">
-                        Я не знаю пароль
+                        Другой способ регистрации
                     </p>
                 </div>
             </div>
         </div>
         <div style="height: 75px; display: flex; align-items: center; width: 100%; justify-content: center;">
-            <p style="color: rgb(0, 0, 255); cursor: pointer; text-align: center;" @click="$router.push({ name: 'DigitalSubscribe' })">
-                Вход с помощью электронной подписи
+            <p style="cursor: pointer; text-align: center;" @click="$router.push({ name: 'DigitalSubscribe' })">
+                Уже зарегестрированы? <span style="color: rgb(0, 0, 255);">Войти</span>
             </p>
         </div>
         <div style="width: 100%;">
