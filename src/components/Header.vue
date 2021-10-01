@@ -89,7 +89,7 @@
                             Моё здоровье
                         </p>
                     </div>
-                    <div @click="$router.push({ name: 'Penseions' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Pension' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/26.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Пенсия, пособия, льготы
@@ -121,7 +121,7 @@
                             Культура, досуг, спорт
                         </p>
                     </div>
-                    <div @click="$router.push({ name: 'Bussiness' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
+                    <div @click="$router.push({ name: 'Business' })" style="cursor: pointer; margin: 15px; align-self: center; display: flex; align-items: center;">
                         <img style="align-self: center;" src="https://gu-st.ru/content/catalog/pas/34.svg" width="45px" alt="">
                         <p style="align-self: center; margin-left: 10px;">
                             Бизнес и предпринимательство, НКО
