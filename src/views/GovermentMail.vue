@@ -20,78 +20,235 @@
                 </div>
                 <hr />
                 <h3>
-                Заявления 
+                    Мои сообщения
                 </h3>
                 <div style="display: flex; margin-top: 35px;">
                     <div>
+                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Входящие
+                        </p>
                         <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.ORDERS
+                            Исходящие
                         </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.DRAFTS
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Архив сообщений
                         </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.ARCHIVES
-                        </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.SETTINGS
+                        <hr />
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Настройки
                         </p>
                     </div>
                     <div style="margin-left: 125px; width: 65%;">
-                        <div style="display: flex;">
-                            <div style="box-sizing: border-box; padding: 10px; display: flex; justify-content: space-between; align-items: center; background-color: rgb(240, 240, 240); height: 50px; width: 275px; border-radius: 10px;">
-                                <span>
-                                    Все
-                                </span>
-                                <span style="color: rgb(0, 0, 255); font-weight: bolder;" class="material-icons">
-                                    expand_more
-                                </span>
-                            </div>
-                            <div style="color: rgb(215, 215, 215); margin-left: 15px; box-sizing: border-box; padding: 10px; display: flex; justify-content: space-between; align-items: center; background-color: rgb(240, 240, 240); height: 50px; width: 275px; border-radius: 10px;">
-                                <span >
-                                    Поиск
-                                </span>
-                                <span class="material-icons" style="font-size: 36px;">
-                                    search
-                                </span>
-                            </div>
-                        </div>
                         
-                        <hr/>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span class="material-icons" style="align-self: flex-start; color: rgb(0, 125, 0);">
-                                flag
-                            </span>
-                            <div style="display: flex; flex-direction: column;">
-                                <p>
-                                    Замена паспорта РФ в связи с достижением возраста 20 или 45 лет
-                                </p>
-                                <p style="color: rgb(125, 125, 125);">
-                                    Закрыто
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <p style="color: rgb(0, 0, 255); text-decoration: underline; text-decoration-style: dotted;">
+                                    Сделать непрочитанным
                                 </p>
                             </div>
-                            <span>
-                                15.01.2021, 10:20
-                            </span>
+                            <div>
+                                <div style="color: rgb(200, 200, 200); box-sizing: border-box; padding: 15px; height: 45px; justify-content: space-between; align-items: center; width: 275px; background-color: rgb(235, 235, 235); border-radius: 10px; display: flex;">
+                                    <span>
+                                        Поиск
+                                    </span>
+                                    <span class="material-icons-outlined">
+                                        search
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <hr/>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="align-self: flex-start; color: rgb(255, 175, 0);" class="material-icons">
-                                schedule
-                            </span>
-                            <div style="display: flex; flex-direction: column;">
-                                <p>
-                                    Заявление о предоставление гражданину госсударственной услуги по содействию в поиске подходящей работы
-                                </p>
-                                <p style="color: rgb(125, 125, 125);">
-                                    Назначено пособие
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
                                 </p>
                             </div>
-                            <span>
-                                23.11.2020, 15:20
-                            </span>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
                         </div>
-                        <hr/>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div style="align-items: center; display: flex; flex-direction: row; justify-content: space-between;">
+                            <input type="checkbox">
+                            <div>
+                                <h5>
+                                    Получите цифровую профессию за полцены
+                                </h5>
+                                <p style="color: rgb(175, 175, 175);">
+                                   Портал Госуслуг 
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Вчера
+                                </p>
+                                <p>
+                                    20:15
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+
                     </div>
                 </div>
                 <div style="font-weight: bolder; align-items: center; border-radius: 10px 10px 0px 0px; display: flex; justify-content: space-around; color: rgb(255, 255, 255); float: right; background-color: rgb(0, 0, 255); height: 50px; width: 275px;">

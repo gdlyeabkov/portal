@@ -20,78 +20,171 @@
                 </div>
                 <hr />
                 <h3>
-                Заявления 
+                    Документы и данные
                 </h3>
                 <div style="display: flex; margin-top: 35px;">
                     <div>
+                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Личные документы
+                        </p>
                         <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.ORDERS
+                            Семья и дети
                         </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.DRAFTS
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Транспорт
                         </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.ARCHIVES
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Здоровье
                         </p>
-                        <p :style="`font-weight: bolder; color: ${true ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
-                            ORDERS.ASIDE.SETTINGS
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Работа и пенсия
+                        </p>
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Образование
+                        </p>
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Льготы и выплаты
+                        </p>
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Доходы и налоги
+                        </p>
+                        <p :style="`font-weight: bolder; color: ${false ? 'rgb(0, 0, 0)' : 'rgb(0, 0, 255)'}`">
+                            Правопорядок
                         </p>
                     </div>
                     <div style="margin-left: 125px; width: 65%;">
-                        <div style="display: flex;">
-                            <div style="box-sizing: border-box; padding: 10px; display: flex; justify-content: space-between; align-items: center; background-color: rgb(240, 240, 240); height: 50px; width: 275px; border-radius: 10px;">
-                                <span>
-                                    Все
-                                </span>
-                                <span style="color: rgb(0, 0, 255); font-weight: bolder;" class="material-icons">
-                                    expand_more
-                                </span>
+                        <div style="">
+                            
+                            <div style="display: flex; justify-content: space-around">
+                                <div style="width: 350px; height: 375px; background-color: rgb(255, 255, 255);">
+                                    <div style="display: flex; justify-content: space-around;">
+                                        <h5>
+                                            Пасспорт РФ
+                                        </h5>
+                                        <div>
+                                            <span class="material-icons-outlined">
+                                                camera_alt
+                                            </span>
+                                            <span class="material-icons-outlined">
+                                                chevron_right
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <h5>
+                                        4620916477
+                                    </h5>
+                                    <p style="color: rgb(175, 175, 175);">
+                                        Выдан
+                                    </p>
+                                    <p>
+                                        ГУ МВД России по Московской области
+                                    </p>
+                                    <p style="color: rgb(175, 175, 175);">
+                                        Код подразделения
+                                    </p>
+                                    <p>
+                                        500-163
+                                    </p>
+                                    <p style="color: rgb(175, 175, 175);">
+                                        Дата выдачи
+                                    </p>
+                                    <p>
+                                        15.01.2021
+                                    </p>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <div style="box-sizing: border-box; padding: 15px; width: 375px; height: 125px; background-color: rgb(255, 255, 255); border-radius: 10px;">
+                                        <h5>
+                                            СНИЛС
+                                        </h5>
+                                        <hr />
+                                        <h5>
+                                            158-717-026 89
+                                        </h5>
+                                    </div>
+                                    <div style="margin-top: 15px; box-sizing: border-box; padding: 15px; width: 375px; height: 225px; background-color: rgb(255, 255, 255); border-radius: 10px;">
+                                        <h5>
+                                            ИНН
+                                        </h5>
+                                        <div style="margin-top: 15px; box-sizing: border-box; padding: 15px; background-color: rgb(255, 185, 200); width: 100%; height: 75px;">
+                                            <h6>
+                                                Не найден в ФНС 
+                                            </h6>
+                                            <p>
+                                                Проверьте данные и отправьте ещё раз
+                                            </p>
+                                        </div>
+                                        <h5 style="margin-top: 15px;">
+                                            212-717-026 89
+                                        </h5>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="color: rgb(215, 215, 215); margin-left: 15px; box-sizing: border-box; padding: 10px; display: flex; justify-content: space-between; align-items: center; background-color: rgb(240, 240, 240); height: 50px; width: 275px; border-radius: 10px;">
-                                <span >
-                                    Поиск
-                                </span>
-                                <span class="material-icons" style="font-size: 36px;">
-                                    search
-                                </span>
-                            </div>
+
+                            <h3>
+                                Адреса
+                            </h3>
+                            <p>
+                                Редактировать
+                            </p>
+                        </div>
+                        <div style="box-sizing: border-box; padding: 5px 15px; width: 775px; height: 75px; background-color: rgb(255, 255, 255); border-radius: 10px;">
+                            <p style="color: rgb(215, 215, 215);">
+                                Адрес постоянной регистрации
+                            </p>
+                            <p>
+                                141104, обл Московская, г Щёлково, ул Беляева, д. 49, кв. 73
+                            </p>
+                            <p style="color: rgb(0, 0, 255);">
+                                Запросить
+                            </p>
                         </div>
                         
-                        <hr/>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span class="material-icons" style="align-self: flex-start; color: rgb(0, 125, 0);">
-                                flag
-                            </span>
-                            <div style="display: flex; flex-direction: column;">
-                                <p>
-                                    Замена паспорта РФ в связи с достижением возраста 20 или 45 лет
-                                </p>
-                                <p style="color: rgb(125, 125, 125);">
-                                    Закрыто
+                        <h3>
+                            Свидетельства
+                        </h3>
+                        <div style="display: flex; align-items: center; justify-content: space-around; width: 775px; height: 75px; background-color: rgb(255, 255, 255); border-radius: 10px; border: 1px solid rgb(225, 225, 225);">
+                            <p style="width: 75%;">
+                                Запросите сведения о рождении и перемене имени на вас и ваших детей и данные об отцовстве
+                                Также придут сведения о браках и разводах
+                            </p>
+                            <p style="color: rgb(0, 0, 255);">
+                                Запросить
+                            </p>
+                        </div>
+                        <p style="color: rgb(0, 0, 255);">
+                            Добавить вручную
+                        </p>
+                        <h3>
+                            Дополнительные документы
+                        </h3>
+                        <p style="color: rgb(175, 175, 175);">
+                            Добавьте документы, чтобы они всегда были у вас под рукой
+                        </p>
+                        <div style="display: flex; justify-content: space-around; width: 100%;">
+                            <div style="background-color: rgb(255, 255, 255); width: 325px; height: 100px; border: 1px solid rgb(175, 175, 175); border-radius: 10px; box-sizing: border-box; padding: 10px;">
+                                <h5>
+                                    Загранпаспорт
+                                </h5>
+                                <div style="display: flex; color: rgb(0, 0, 255);">
+                                    <p>
+                                        Добавить
+                                    </p>
+                                    <p style="margin-left: 15px;">
+                                        Получить загранпаспорт
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="background-color: rgb(255, 255, 255); width: 325px; height: 100px; border: 1px solid rgb(175, 175, 175); border-radius: 10px; box-sizing: border-box; padding: 10px;">
+                                <h5>
+                                    Военный билет
+                                </h5>
+                                <p  style="display: flex; color: rgb(0, 0, 255);">
+                                    Добавить
                                 </p>
                             </div>
-                            <span>
-                                15.01.2021, 10:20
-                            </span>
                         </div>
-                        <hr/>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="align-self: flex-start; color: rgb(255, 175, 0);" class="material-icons">
-                                schedule
-                            </span>
-                            <div style="display: flex; flex-direction: column;">
-                                <p>
-                                    Заявление о предоставление гражданину госсударственной услуги по содействию в поиске подходящей работы
-                                </p>
-                                <p style="color: rgb(125, 125, 125);">
-                                    Назначено пособие
-                                </p>
-                            </div>
-                            <span>
-                                23.11.2020, 15:20
-                            </span>
-                        </div>
-                        <hr/>
                     </div>
                 </div>
                 <div style="font-weight: bolder; align-items: center; border-radius: 10px 10px 0px 0px; display: flex; justify-content: space-around; color: rgb(255, 255, 255); float: right; background-color: rgb(0, 0, 255); height: 50px; width: 275px;">
