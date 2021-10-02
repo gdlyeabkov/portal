@@ -8,6 +8,7 @@ import Overview from '../views/Overview.vue'
 import PersonalAreaRegister from '../views/PersonalAreaRegister.vue'
 import PersonalAreaAdminRegister from '../views/PersonalAreaAdminRegister.vue'
 import PersonalAreaLogin from '../views/PersonalAreaLogin.vue'
+import PersonalArea from '../views/PersonalArea.vue'
 import Help from '../views/Help.vue'
 import Pay from '../views/Pay.vue'
 
@@ -59,6 +60,11 @@ const routes = [
     path: '/register',
     name: 'PersonalAreaRegister',
     component: PersonalAreaRegister
+  },
+  {
+    path: '/area',
+    name: 'PersonalArea',
+    component: PersonalArea
   },
   {
     path: '/admin/register',

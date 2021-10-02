@@ -199,8 +199,8 @@
           <p style="color: rgb(255, 255, 255); font-size: 18px; font-weight: bolder;">Вход в госуслуги</p>
           <hr/>
           <p style="color: rgb(255, 255, 255); ">Войдите или зарегистрируйтесь, чтобы получить полный доступ к электронным госуслугам</p>
-          <button style="display: block; width: 250px; padding: 10px; margin: 10px auto" class="btn btn-light">Войти</button>
-          <button style="display: block; margin: auto; width: 250px; padding: 10px;" class="btn btn-primary">Зарегистрироваться</button>
+          <button @click="$router.push({ name: 'PersonalAreaLogin' })" style="display: block; width: 250px; padding: 10px; margin: 10px auto" class="btn btn-light">Войти</button>
+          <button @click="$router.push({ name: 'PersonalAreaRegister' })" style="display: block; margin: auto; width: 250px; padding: 10px;" class="btn btn-primary">Зарегистрироваться</button>
           <a style="text-align: center; display: block; margin: auto; color: rgb(255, 255, 255); " href="">Как зарегистрироваться</a>
         </div>
       </div>

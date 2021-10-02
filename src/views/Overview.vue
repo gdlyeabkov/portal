@@ -1,20 +1,20 @@
 <template>
     <div>
         <PersonalAreaHeader /> 
-        <PersonalAreaBreadcrumbs :title="'Заявления'"/>        
+        <PersonalAreaBreadcrumbs :title="'Обзор'"/>        
         <div style="background-color: rgb(245, 245, 245);">
-            <div style="position: relative; top: 75px; width: 85%; margin: auto; height: 590px;">
+            <div style="position: relative; top: 0px; width: 85%; margin: auto; height: 590px;">
                 <div style="display: flex; justify-content: space-between; width: 650px; ">
-                    <p :style="`color: ${false ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${true ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px;`">
+                    <p :style="`color: ${false ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${true ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px; cursor: pointer;`" @click="$router.push({ name: 'Overview' })">
                         Обзор
                     </p>
-                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px;`">
+                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px; cursor: pointer;`" @click="$router.push({ name: 'Statements' })">
                         Заявления
                     </p>
-                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px;`">
+                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px; cursor: pointer;`" @click="$router.push({ name: 'DocumentsAndData' })">
                         Документы и данные
                     </p>
-                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px;`">
+                    <p :style="`color: ${true ? 'rgb(0, 0, 255);' : 'rgb(0, 0, 0);'} text-decoration: ${false ? 'underline;' : 'none;'} font-size: 18px; font-weight: bolder; line-height: 15px; cursor: pointer;`" @click="$router.push({ name: 'GovermentMail' })">
                         Госпочта
                     </p>
                 </div>

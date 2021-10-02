@@ -3,7 +3,7 @@
         <div style="margin: auto; background-color: rgb(0, 0, 155); width: 100%; height: 50px;">
             <div style="margin: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%;">
                 <div style="margin: auto; flex-direction: row; width: 85%; align-items: center; align-self: center; justify-content: flex-end;">
-                    <div style="float: left; background-color: rgb(215, 215, 215);  background-image: url('https://svgsilh.com/svg/1297477-9e9e9e.svg'); width: 75px; background-size: 100% 100%;">
+                    <div style="float: left; background-image: url('https://gu-st.ru/content/newportal/mainpage/icon_32/Gov_services.svg'); height: 35px; width: 75px; background-size: 100% 100%;">
                         &nbsp;
                     </div>
                     <span style="float: left; color: rgb(200, 200, 200);" class="material-icons">
@@ -38,11 +38,11 @@
             <div style="background-image: url('https://gu-st.ru/st/img/logo_nobeta.0a1f5dfe.svg'); height: 100%; width: 175px; background-size: 100% 100%;">
             </div>
             <div style="width: 250px; display: flex; flex-direction: row;  justify-content: space-between;">
-                <p @mouseenter="drawServicesMenu(true)" style="color: rgb(0, 0, 255);" @click="$router.push({ name: 'Services' })">Услуги</p>
-                <p @mouseenter="drawServicesMenu(false)" style="color: rgb(0, 0, 255);" @click="$router.push({ name: 'Services' })">Оплата</p>
-                <p @mouseenter="drawServicesMenu(false)" style="color: rgb(0, 0, 255);" @click="$router.push({ name: 'Services' })">Поддержка</p>
+                <p @mouseenter="drawServicesMenu(true)" style="color: rgb(0, 0, 255); cursor: pointer;" @click="$router.push({ name: 'Services' })">Услуги</p>
+                <p @mouseenter="drawServicesMenu(false)" style="color: rgb(0, 0, 255); cursor: pointer;" @click="$router.push({ name: 'Pay' })">Оплата</p>
+                <p @mouseenter="drawServicesMenu(false)" style="color: rgb(0, 0, 255); cursor: pointer;" @click="$router.push({ name: 'Help' })">Поддержка</p>
                 <span style="color: rgb(0, 0, 255);" @click="$router.push({ name: 'Services' })" class="material-icons">
-                search
+                    search
                 </span>
             </div>
             <p v-if="!citizenIsLogin" style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'PersonalAreaLogin' })">
