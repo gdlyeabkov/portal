@@ -466,6 +466,13 @@ export default {
         })
     },
     methods: {
+        logout(){
+            this.token = jwt.sign({
+                phone: this.phone
+            }, 'portalsecret', { expiresIn: 1 })
+            localStorage.setItem('portaltoken', this.token)
+            this.$router.push({ name: 'Home' })
+        },
         hoverEffect(event, toggle){
             if(toggle){
                 // event.target.style = `

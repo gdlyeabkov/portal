@@ -144,7 +144,7 @@
             <span class="material-icons">
                 logout
             </span>
-            <span style="width: 45%; cursor: pointer; font-size: 18px;" @click="$router.push({ name: 'GovermentMail' })">
+            <span style="width: 45%; cursor: pointer; font-size: 18px;" @click="logout()">
                 Выйти
             </span>
         </div>
@@ -178,6 +178,15 @@ export default {
         })
     },
     methods: {
+        logout(){
+            this.token = jwt.sign({
+                phone: this.phone
+            }, 'portalsecret', { expiresIn: 1 })
+            localStorage.setItem('portaltoken', this.token)
+            setTimeout(() => {
+                this.$router.push({ name: 'Home' })
+            }, 1000)
+        },
         drawCitizenMenu(toggle){
             this.citizenMenu = toggle
         }

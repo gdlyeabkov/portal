@@ -30,6 +30,7 @@ import Ecology from '../views/services/Ecology.vue'
 import Services from '../views/Services.vue'
 import Government from '../views/Government.vue'
 import LifeSituations from '../views/LifeSituations.vue'
+import Company from '../views/Company.vue'
 
 Vue.use(VueRouter)
 
@@ -38,6 +39,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/company',
+    name: 'Company',
+    component: Company
   },
   {
     path: '/services',

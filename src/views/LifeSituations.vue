@@ -34,21 +34,21 @@
     <div style="margin-top: 50px; text-align: center; display: flex; justify-content: center; width: 85%; margin: auto; align-items: center;">
       <div :style="`width: 33%; ${false ? 'border-left: 1px solid rgb(175, 175, 175); border-right: 1px solid rgb(175, 175, 175); border-top: 1px solid rgb(175, 175, 175);' : 'border-bottom: 1px solid rgb(175, 175, 175);'}`">
         <!-- <hr /> -->
-        <p :style="`color: ${false ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
+        <p @click="$router.push({ name: 'Services' })" :style="`cursor: pointer; color: ${false ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
           Категории услуг
         </p>
         <!-- <hr /> -->
       </div>
       <div :style="`width: 33%; ${false ? 'border-left: 1px solid rgb(175, 175, 175); border-right: 1px solid rgb(175, 175, 175); border-top: 1px solid rgb(175, 175, 175);' : 'border-bottom: 1px solid rgb(175, 175, 175);'}`">
         <!-- <hr /> -->
-        <p :style="`color: ${false ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
+        <p @click="$router.push({ name: 'Government' })" :style="`cursor: pointer; color: ${false ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
           Органы власти
         </p>
         <!-- <hr /> -->
       </div>
       <div :style="`width: 33%; ${true ? 'border-left: 1px solid rgb(175, 175, 175); border-right: 1px solid rgb(175, 175, 175); border-top: 1px solid rgb(175, 175, 175);' : 'border-bottom: 1px solid rgb(175, 175, 175);'}`">
         <!-- <hr /> -->
-        <p :style="`color: ${true ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
+        <p @click="$router.push({ name: 'LifeSituations' })" :style="`cursor: pointer; color: ${true ? 'rgb(0, 0, 0);' : 'rgb(0, 0, 255);'} font-weight: bolder; font-size: 24px;`">
           Жизненные ситуации
         </p>
         <!-- <hr /> -->
