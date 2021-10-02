@@ -35,6 +35,7 @@
                     <p style="color: rgb(255, 0, 0); font-size: 12px;">
                         {{ phoneErrors }}
                     </p>
+                    <input v-model="email" type="email" style="margin-bottom: 15px;" class="form-control" placeholder="E-mail" />
                     <input v-model="name" type="text" style="margin-bottom: 15px;" class="form-control" placeholder="ФИО" />
                     <input v-model="age" type="number" style="margin-bottom: 15px;" class="form-control" placeholder="Возраст" />
                     <input v-model="password" type="password" class="form-control" placeholder="Пароль" />
@@ -90,6 +91,7 @@ export default {
     name: "PersonalArea",
     data(){
         return {
+            email: '',
             phone: '',
             phoneErrors: '',
             password: '',
@@ -100,7 +102,7 @@ export default {
     },
     methods: {
         register(){
-            fetch(`http://localhost:4000/citizens/create/?phone=${this.phone}&password=${this.password}&name=${this.name}&age=${this.age}`, {
+            fetch(`http://localhost:4000/citizens/create/?phone=${this.phone}&password=${this.password}&email=${this.email}&name=${this.name}&age=${this.age}`, {
                 mode: 'cors',
                 method: 'GET'
             }).then(response => response.body).then(rb  => {

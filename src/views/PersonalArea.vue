@@ -41,7 +41,7 @@
                                     check_circle
                                 </span>    
                                 <p>
-                                    +79254683410
+                                    {{ currentCitizen }}
                                 </p>
                                 <p style="color: rgb(0, 0, 255); font-weight: bolder;">
                                     Изменить
@@ -67,7 +67,7 @@
                                     Новый адрес
                                 </p>
                                 <p>
-                                    rodhitroumnyi@mail.ru
+                                    {{ email }}
                                 </p>
                                 <p>
                                     На эту электронную почту придёт письмо с ссылкой для подтверждения
@@ -90,11 +90,13 @@
                                 <p>
                                     ****************
                                 </p>
-                                <p style="color: rgb(0, 0, 255); font-weight: bolder;">
+                                <p @click="newPasswordDisabled = !newPasswordDisabled" style="cursor: pointer; color: rgb(0, 0, 255); font-weight: bolder;">
                                     Изменить
                                 </p>
                             </div>
 
+                            <input :disabled="newPasswordDisabled" class="w-25 form-control" type="password" v-model="newPassword">
+                            
                             <hr/>
 
                             <div style="box-sizing: border-box; padding: 5px 15px; width: 775px; height: 75px; background-color: rgb(255, 255, 255); border-radius: 10px;">
@@ -140,8 +142,84 @@ export default {
         return {
             currentCitizen: 'ad',
             token: window.localStorage.getItem("portaltoken"),
-            citizenIsLogin: false
+            citizenIsLogin: false,
+            email: 'rodhitroumnyi@mail.ru',
+            newPassword: '',
+            newPasswordDisabled: true
         }
+    },
+    methods: {
+        replacePassword(){
+            fetch(`http://localhost:4000/password/replace/?phone=${this.currentCitizen}&newpassword=${this.newPassword}`, {
+                mode: 'cors',
+                method: 'GET'
+            }).then(response => response.body).then(rb  => {
+                const reader = rb.getReader()
+                return new ReadableStream({
+                    start(controller) {
+                    function push() {
+                        reader.read().then( ({done, value}) => {
+                        if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                        }
+                        controller.enqueue(value);
+                        console.log(done, value);
+                        push();
+                        })
+                    }
+                    push();
+                    }
+                });
+            }).then(stream => {
+                return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+            })
+            .then(result => {
+                console.log(JSON.parse(result))
+                if(JSON.parse(result).status.includes("OK")){
+                    this.$router.push({ name: "Home" })
+                }
+            });
+        },
+        deleteSelf(){
+            fetch(`http://localhost:4000/citizens/delete/?phone=${this.currentCitizen}`, {
+                mode: 'cors',
+                method: 'GET'
+            }).then(response => response.body).then(rb  => {
+                const reader = rb.getReader()
+                return new ReadableStream({
+                    start(controller) {
+                    function push() {
+                        reader.read().then( ({done, value}) => {
+                        if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                        }
+                        controller.enqueue(value);
+                        console.log(done, value);
+                        push();
+                        })
+                    }
+                    push();
+                    }
+                });
+            }).then(stream => {
+                return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+            })
+            .then(result => {
+                console.log(JSON.parse(result))
+                if(JSON.parse(result).status.includes("OK")){
+                    this.token = jwt.sign({
+                        phone: "this.phone"
+                    }, 'portalsecret', { expiresIn: 1 })
+                    setTimeout(() => {
+                        this.$router.push({ name: "Home" })
+                    }, 1000)
+                }
+            });
+        },
     },
     mounted(){
         jwt.verify(this.token, 'portalsecret', (err, decoded) => {
@@ -151,6 +229,37 @@ export default {
             } else {
                 this.currentCitizen = decoded.phone
                 this.citizenIsLogin = true
+                fetch(`http://localhost:4000/citizens/get/?phone=${this.currentCitizen}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                        start(controller) {
+                        function push() {
+                            reader.read().then( ({done, value}) => {
+                            if (done) {
+                                console.log('done', done);
+                                controller.close();
+                                return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                            })
+                        }
+                        push();
+                        }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(JSON.parse(result))
+                    if(JSON.parse(result).status.includes("OK")){
+                        this.email = JSON.parse(result).citizen.email
+                    }
+                });
             }
         })
     },

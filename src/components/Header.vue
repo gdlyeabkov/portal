@@ -307,7 +307,7 @@
                         Согласия
                     </p>
                     <hr />
-                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="logout()">
+                    <p style="cursor: pointer; color: rgb(0, 0, 255);" @click="$router.push({ name: 'PersonalArea' })">
                         Настройки и безопасность
                     </p>
                     <hr />

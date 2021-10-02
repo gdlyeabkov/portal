@@ -32,6 +32,8 @@ import Government from '../views/Government.vue'
 import LifeSituations from '../views/LifeSituations.vue'
 import Company from '../views/Company.vue'
 
+import ForCitizen from '../views/ForCitizen.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -39,6 +41,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/forcchhhcitizen',
+    name: 'ForCitizen',
+    component: ForCitizen
   },
   {
     path: '/company',

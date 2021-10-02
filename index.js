@@ -47,6 +47,7 @@ const CitizenSchema = new mongoose.Schema({
     name: String,
     age: Number,
     phone: String,
+    email: String,
     password: String
 }, { collection : 'mycitizens' });
 
@@ -58,9 +59,15 @@ app.get('/citizens/get',(req, res)=>{
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
    
-    
+    let query = CitizenModel.findOne({ phone: req.query.phone });
+    query.exec((err, citizen) => {
+        if(err){
+            return res.json({ "status": "Error" })        
+        }
+        return res.json({ "status": "OK", citizen: citizen })
+    })
 
-    return res.json({ "status": "OK" })
+    
 })
 
 app.get('/citizens/create', async (req, res)=>{
@@ -90,7 +97,7 @@ app.get('/citizens/create', async (req, res)=>{
             let encodedPassword = "#"
             const salt = bcrypt.genSalt(saltRounds)
             encodedPassword = bcrypt.hashSync(req.query.password, saltRounds)
-            const citizen = new CitizenModel({ phone: req.query.phone, password: encodedPassword, name: req.query.name, age: Number(req.query.age) });
+            const citizen = new CitizenModel({ phone: req.query.phone, password: encodedPassword, email: req.query.email, name: req.query.name, age: Number(req.query.age) });
             citizen.save(function (err) {
                 if(err){
                     return res.json({ "status": "Error" })
@@ -99,6 +106,36 @@ app.get('/citizens/create', async (req, res)=>{
             })
         }
     });
+})
+
+app.get('/password/replace', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    CitizenModel.updateOne({ phone: req.query.phone }, { password: req.query.newpassword }, (err, citizen) => {
+        if(err){
+            return res.json({ status: 'Error' })        
+        }
+        return res.json({ status: 'OK' })    
+    })
+})
+
+app.get('/citizens/delete', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    CitizenModel.deleteOne({ phone: req.query.phone }, (err, citizen) => {
+        if(err){
+            return res.json({ status: 'Error' })
+        }
+        return res.json({ status: 'OK' })    
+    })
 })
 
 app.get('/citizens/check', (req,res)=>{
