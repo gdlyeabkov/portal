@@ -27,6 +27,7 @@ import Business from '../views/services/Business.vue'
 import Production from '../views/services/Production.vue'
 import Information from '../views/services/Information.vue'
 import Ecology from '../views/services/Ecology.vue'
+import Services from '../views/Services.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/services',
+    name: 'Services',
+    component: Services
   },
   {
     path: '/statements',
